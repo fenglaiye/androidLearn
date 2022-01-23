@@ -2,4 +2,9 @@
     <string name="app_name">androidLearn</string>
     <string name="button_1">Button 1</string>
     <string name="app_nav_title">First App</string>
+    <string name="button_1_click">You clicked Button 1</string>
+    <string name="menu_add">Add</string>
+    <string name="menu_remove">Remove</string>
+    <string name="menu_add_click">You clicked Add</string>
+    <string name="menu_remove_click">You clicked Remove</string>
 </resources>
