@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">androidLearn</string>
+    <string name="button_1">Button 1</string>
+    <string name="app_nav_title">First App</string>
 </resources>
