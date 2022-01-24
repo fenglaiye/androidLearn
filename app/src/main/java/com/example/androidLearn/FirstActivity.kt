@@ -1,6 +1,7 @@
 package com.example.androidLearn
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -16,7 +17,21 @@ class FirstActivity : AppCompatActivity() {
         binding = FirstLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.button1.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
+            // 显式Intent
+//            val intent = Intent(this, SecondActivity::class.java)
+            // 隐式Intent
+            val intent = Intent("com.example.androidLearn.ACTION_START")
+            intent.addCategory("com.example.androidLearn.MY_CATEGORY")
+            startActivity(intent)
+        }
+        binding.button2.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://www.baidu.com")
+            startActivity(intent)
+        }
+        binding.button3.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:10086")
             startActivity(intent)
         }
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.androidLearn">
 
     <application
@@ -11,14 +12,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLearn">
         <activity
+            android:name=".ThirdActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.androidLearn.ACTION_THIRD" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.example.androidLearn.MY_CATEGORY" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".SecondActivity"
-            android:exported="false" />
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.androidLearn.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.example.androidLearn.MY_CATEGORY" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".FirstActivity"
             android:exported="true"
             android:label="@string/app_nav_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
