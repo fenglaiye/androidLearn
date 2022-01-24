@@ -1,5 +1,6 @@
 package com.example.androidLearn
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -15,7 +16,8 @@ class FirstActivity : AppCompatActivity() {
         binding = FirstLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.button1.setOnClickListener {
-            Toast.makeText(this, R.string.button_1_click, Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
         }
     }
 
