@@ -1,11 +1,19 @@
 package com.example.androidLearn
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import com.example.androidLearn.databinding.ThirdLayoutBinding
 
-class ThirdActivity : AppCompatActivity() {
+private lateinit var binding: ThirdLayoutBinding
+
+class ThirdActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.third_layout)
+        binding = ThirdLayoutBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        Log.d(Global.TAG, "Task id3 is $taskId")
+        binding.button3.setOnClickListener {
+            ActivityCollector.finishAll()
+        }
     }
 }

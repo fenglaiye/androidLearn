@@ -21,6 +21,7 @@
                 <category android:name="com.example.androidLearn.MY_CATEGORY" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".SecondActivity"
             android:exported="false">
@@ -31,6 +32,7 @@
                 <category android:name="com.example.androidLearn.MY_CATEGORY" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".FirstActivity"
             android:exported="true"
