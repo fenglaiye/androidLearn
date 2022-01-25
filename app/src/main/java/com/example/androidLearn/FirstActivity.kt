@@ -1,5 +1,6 @@
 package com.example.androidLearn
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -7,11 +8,19 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import com.example.androidLearn.databinding.FirstLayoutBinding
 
 private lateinit var binding: FirstLayoutBinding
 
 class FirstActivity : AppCompatActivity() {
+    private val firstActivityLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { activityResult ->
+        if (activityResult.resultCode == Activity.RESULT_OK) {
+            val result = activityResult.data?.getStringExtra("result")
+            Toast.makeText(this, result, Toast.LENGTH_LONG).show()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = FirstLayoutBinding.inflate(layoutInflater)
@@ -22,7 +31,8 @@ class FirstActivity : AppCompatActivity() {
             // 隐式Intent
             val intent = Intent("com.example.androidLearn.ACTION_START")
             intent.addCategory("com.example.androidLearn.MY_CATEGORY")
-            startActivity(intent)
+            intent.putExtra("extra_data", "Hello Second")
+            firstActivityLauncher.launch(intent)
         }
         binding.button2.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
