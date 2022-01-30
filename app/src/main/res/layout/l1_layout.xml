@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".L1Activity">
+<!--  位置约束  -->
+<TextView
+    android:id="@+id/t1"
+    android:layout_width="80dp"
+    android:layout_height="60dp"
+    android:text="A"
+    android:gravity="center"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+<!--  基线对齐  -->
+<TextView
+    android:id="@+id/t2"
+    android:textSize="30sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="￥"
+    app:layout_constraintStart_toEndOf="@+id/t1"
+    app:layout_constraintTop_toTopOf="@+id/t1" />
+<TextView
+    android:id="@+id/t3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="20"
+    app:layout_constraintBaseline_toBaselineOf="@+id/t2"
+    app:layout_constraintStart_toEndOf="@+id/t2" />
+<!--  角度约束 角度与目标中心距离  -->
+<ImageView
+    android:id="@+id/i1"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:src="@drawable/ic_launcher_background"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/t1" />
+<Button
+    android:id="@+id/b1"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:text="1"
+    android:gravity="center"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/i1"
+    app:layout_constraintCircle="@id/i1"
+    app:layout_constraintCircleAngle="135"
+    app:layout_constraintCircleRadius="60dp" />
+<!-- 百分比 必须指定四周的-->
+<Button
+    android:id="@+id/b2"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:text="2"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintHorizontal_bias="0.02"
+    app:layout_constraintVertical_bias="0.2"/>
+<!-- 内外边距 就是padding -->
+<Button
+    android:id="@+id/b3"
+    android:layout_width="30dp"
+    android:layout_height="40dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+/>
+<!--  比例宽高  -->
+<TextView
+    android:id="@+id/t4"
+    android:layout_width="0dp"
+    android:layout_height="50dp"
+    android:background="@drawable/ic_launcher_background"
+    android:gravity="center"
+    android:text="A"
+    app:layout_constraintTop_toTopOf="@+id/i1"
+    app:layout_constraintStart_toEndOf="@+id/b1"
+    app:layout_constraintDimensionRatio="1:1.5" />
+<!-- 线 -->
+<androidx.constraintlayout.widget.Guideline
+    android:id="@+id/g1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_percent="0.5" />
+<!--  链  -->
+<TextView
+    android:layout_width="0dp"
+    android:layout_height="50dp"
+    android:id="@+id/t5"
+    android:text="T1"
+    app:layout_constraintTop_toTopOf="@+id/g1"
+    app:layout_constraintStart_toStartOf="parent"
+    android:background="@drawable/ic_launcher_background"
+    app:layout_constraintHorizontal_chainStyle="spread"
+    app:layout_constraintHorizontal_weight="2"
+    app:layout_constraintEnd_toStartOf="@+id/t6" />
+<TextView
+    android:layout_width="0dp"
+    android:layout_height="70dp"
+    android:background="@drawable/ic_launcher_background"
+    android:id="@+id/t6"
+    android:text="T2"
+    android:layout_marginStart="20dp"
+    app:layout_constraintStart_toEndOf="@+id/t5"
+    app:layout_constraintEnd_toStartOf="@+id/t7"
+    app:layout_constraintHorizontal_weight="1"
+    app:layout_constraintTop_toTopOf="@+id/g1" />
+<TextView
+    android:layout_width="0dp"
+    android:layout_height="30dp"
+    android:background="@drawable/ic_launcher_background"
+    android:id="@+id/t7"
+    android:text="T3"
+    android:layout_marginStart="10dp"
+    app:layout_constraintStart_toEndOf="@+id/t6"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_weight="3"
+    app:layout_constraintTop_toTopOf="@+id/g1" />
+<!--  屏障  -->
+<androidx.constraintlayout.widget.Guideline
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/g2"
+    app:layout_constraintGuide_percent="0.24" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:id="@+id/t10"
+    android:text="qqqqqsss"
+    app:layout_constraintTop_toTopOf="@+id/g2"
+    app:layout_constraintStart_toStartOf="parent" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:text="wwwwwwssssssssssssssswww"
+    android:id="@+id/t11"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/t10" />
+<androidx.constraintlayout.widget.Barrier
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@id/ba1"
+    app:barrierDirection="end"
+    app:constraint_referenced_ids="t10, t11" />
+<TextView
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/t12"
+    android:layout_marginStart="8dp"
+    app:layout_constraintWidth_default="wrap"
+    android:text="eeeeeeeeeeeeeeeeeeqweqweqeqweqweq"
+    app:layout_constraintStart_toEndOf="@+id/ba1"
+    app:layout_constraintTop_toTopOf="@+id/g2" />
+<!--  组  -->
+<androidx.constraintlayout.widget.Group
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="visible"
+    app:constraint_referenced_ids="t5, t6, t7" />
+<!--  占位符  -->
+<!--<androidx.constraintlayout.widget.Placeholder-->
+<!--    android:layout_width="20dp"-->
+<!--    android:layout_height="30dp"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintTop_toTopOf="@+id/b3" />-->
+<!-- Flow 流式虚拟布局 -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
