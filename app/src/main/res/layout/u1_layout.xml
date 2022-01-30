@@ -6,4 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".U1Activity">
 
+<!--  引入布局  -->
+<!--    <include layout="@layout/title" />-->
+    <com.example.androidLearn.TitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+    android:id="@+id/t1"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:gravity="center"
+    android:textSize="25sp"
+    android:textColor="#32ccfe"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginTop="60dp"
+    android:text="This is TextView" />
+
+<Button
+    android:layout_width="100dp"
+    android:layout_height="80dp"
+    android:id="@+id/b1"
+    android:textAllCaps="false"
+    app:layout_constraintTop_toBottomOf="@+id/t1"
+    app:layout_constraintStart_toStartOf="parent"
+    android:text="Button" />
+
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/b1"
+    android:layout_marginTop="10dp"
+    android:hint="Type something here"
+    android:maxLines="2"
+    android:id="@+id/e1" />
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="100dp"
+    android:id="@+id/i1"
+    android:src="@drawable/i1"
+    app:layout_constraintTop_toBottomOf="@+id/e1"
+    app:layout_constraintStart_toStartOf="parent" />
+
+<ProgressBar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/p1"
+    app:layout_constraintTop_toBottomOf="@+id/i1"
+    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+    android:max="100"
+    app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
