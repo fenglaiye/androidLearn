@@ -6,12 +6,15 @@
         <entry key="../../../../../layout/custom_preview.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3145" />
         <entry key="app/src/main/res/layout/first_layout.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/fruit_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/l1_layout.xml" value="0.5" />
         <entry key="app/src/main/res/layout/l2_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/list_view_layout.xml" value="0.21041666666666667" />
         <entry key="app/src/main/res/layout/second_layout.xml" value="0.22826086956521738" />
         <entry key="app/src/main/res/layout/third_layout.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/title.xml" value="0.335" />
         <entry key="app/src/main/res/layout/u1_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/u2_layout.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/menu/main.xml" value="0.45" />
       </map>
     </option>
