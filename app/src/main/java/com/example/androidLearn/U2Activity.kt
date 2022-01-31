@@ -2,6 +2,7 @@ package com.example.androidLearn
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.androidLearn.databinding.U2LayoutBinding
 
 private lateinit var binding: U2LayoutBinding
@@ -29,6 +30,10 @@ class U2Activity : AppCompatActivity() {
         initFruits()
         val adapter = FruitAdapter(this, R.layout.fruit_item, fruitList)
         binding.l1.adapter = adapter
+        binding.l1.setOnItemClickListener { _, _, position, id ->
+            val fruit = fruitList[position]
+            Toast.makeText(this, "${fruit.name} $id", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun initFruits() {
