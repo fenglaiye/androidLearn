@@ -13,7 +13,7 @@
         android:theme="@style/Theme.AndroidLearn" >
         <activity
             android:name=".F1Activity"
-            android:screenOrientation="sensorLandscape"
+            android:screenOrientation="sensor"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
