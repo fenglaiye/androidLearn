@@ -12,13 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLearn" >
         <activity
-            android:name=".U4Activity"
+            android:name=".F1Activity"
+            android:screenOrientation="sensorLandscape"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".U4Activity"
+            android:exported="false" >
         </activity>
         <activity
             android:name=".U3Activity"

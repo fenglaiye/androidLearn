@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".F1Activity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/leftFrag"
+        android:name="com.example.androidLearn.LeftFragment" />
+
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/rightFlag"-->
+<!--        android:name="com.example.androidLearn.RightFragment"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:id="@+id/rightFlagLayout"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:constraint_referenced_ids="leftFrag, rightFlagLayout"
+        android:id="@+id/f1" />
+</androidx.constraintlayout.widget.ConstraintLayout>
