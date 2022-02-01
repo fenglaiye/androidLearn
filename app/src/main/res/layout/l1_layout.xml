@@ -82,12 +82,12 @@
     app:layout_constraintStart_toEndOf="@+id/b1"
     app:layout_constraintDimensionRatio="1:1.5" />
 <!-- 线 -->
-<androidx.constraintlayout.widget.Guideline
-    android:id="@+id/g1"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    app:layout_constraintGuide_percent="0.5" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.500684" />
 <!--  链  -->
 <TextView
     android:layout_width="0dp"
