@@ -13,16 +13,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLearn">
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
 
+        <receiver
+            android:name="com.example.broadcast.AnotherBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="1">
+                <action android:name="com.example.broadcast.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
         <receiver
             android:name="com.example.broadcast.MyBroadcastReceiver"
             android:enabled="true"
             android:exported="true">
-            <intent-filter>
+            <intent-filter android:priority="2">
                 <action android:name="com.example.broadcast.MY_BROADCAST" />
             </intent-filter>
         </receiver>
-
         <receiver
             android:name="com.example.broadcast.BootCompleteReceiver"
             android:enabled="true"

@@ -22,7 +22,10 @@ class BroadMainActivity : AppCompatActivity() {
         binding.broadBtn1.setOnClickListener {
             val intent = Intent("com.example.broadcast.MY_BROADCAST")
             intent.setPackage(packageName)
-            sendBroadcast(intent)
+            // 发送标准广播
+//            sendBroadcast(intent)
+            // 发送有序广播
+            sendOrderedBroadcast(intent, null)
         }
 //        val intentFilter = IntentFilter()
 //        intentFilter.addAction("android.intent.action.TIME_TICK")
