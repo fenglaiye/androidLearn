@@ -6,4 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.example.broadcast.BroadMainActivity">
 
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/broadBtn1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="18sp"
+        android:text="Send Broad" />
 </androidx.constraintlayout.widget.ConstraintLayout>
