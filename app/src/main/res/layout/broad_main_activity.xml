@@ -14,4 +14,13 @@
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="18sp"
         android:text="Send Broad" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/forceOffline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="18sp"
+        android:text="Send force offline" />
 </androidx.constraintlayout.widget.ConstraintLayout>
