@@ -5,9 +5,15 @@
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3145" />
+        <entry key="app/src/main/res/layout-sw600dp/news_main_activity.xml" value="0.14002732240437157" />
+        <entry key="app/src/main/res/layout/activity_news_content.xml" value="0.1" />
         <entry key="app/src/main/res/layout/another_right_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/f1_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/first_layout.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/flag_news_content.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/flag_news_title.xml" value="0.13171225937183384" />
+        <entry key="app/src/main/res/layout/frag_main_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/frag_news_content.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fruit_item.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fruit_item1.xml" value="0.22735507246376813" />
         <entry key="app/src/main/res/layout/fruit_item2.xml" value="0.22735507246376813" />
@@ -17,6 +23,11 @@
         <entry key="app/src/main/res/layout/list_view_layout.xml" value="0.21041666666666667" />
         <entry key="app/src/main/res/layout/msg_left_item.xml" value="0.335" />
         <entry key="app/src/main/res/layout/msg_right_item.xml" value="0.1933876811594203" />
+        <entry key="app/src/main/res/layout/new_item.xml" value="0.20153985507246377" />
+        <entry key="app/src/main/res/layout/news_content_flag.xml" value="0.18568840579710144" />
+        <entry key="app/src/main/res/layout/news_item.xml" value="0.18568840579710144" />
+        <entry key="app/src/main/res/layout/news_main_activity.xml" value="0.18568840579710144" />
+        <entry key="app/src/main/res/layout/news_title_frag.xml" value="0.18568840579710144" />
         <entry key="app/src/main/res/layout/right_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/second_layout.xml" value="0.22826086956521738" />
         <entry key="app/src/main/res/layout/third_layout.xml" value="0.1859375" />
