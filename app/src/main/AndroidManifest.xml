@@ -14,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLearn">
         <activity
+            android:name="com.example.dataSave.SharedMainActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.dataSave.FileMainActivity"
+            android:exported="true" />
+        <activity
             android:name="com.example.broadcast.LoginActivity"
             android:exported="true">
             <intent-filter>
