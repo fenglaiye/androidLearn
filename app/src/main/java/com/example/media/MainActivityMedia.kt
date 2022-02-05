@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.MediaController
+import android.widget.VideoView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.NotificationCompat
 import androidx.core.content.FileProvider
@@ -82,6 +84,7 @@ class MainActivityMedia : AppCompatActivity() {
         }
         // 初始化音频播放器
         initMediaPlayer()
+        // 音频的播放暂停和停止
         findViewById<Button>(R.id.play).setOnClickListener {
             if (!mediaPlayer.isPlaying) {
                 mediaPlayer.start() // 开始播放
@@ -96,6 +99,27 @@ class MainActivityMedia : AppCompatActivity() {
             if (mediaPlayer.isPlaying) {
                 mediaPlayer.reset() // 停止播放
                 initMediaPlayer()
+            }
+        }
+        // 加载视频
+        val videoView = findViewById<VideoView>(R.id.videoView)
+        val uri = Uri.parse("android.resource://$packageName/${R.raw.video}")
+        videoView.setVideoURI(uri)
+        videoView.setMediaController(MediaController(this))
+        findViewById<Button>(R.id.playVideo).setOnClickListener {
+            if (!videoView.isPlaying) {
+                videoView.start()
+                videoView.requestFocus()
+            }
+        }
+        findViewById<Button>(R.id.pauseVideo).setOnClickListener {
+            if (videoView.isPlaying) {
+                videoView.pause()
+            }
+        }
+        findViewById<Button>(R.id.replayVideo).setOnClickListener {
+            if (videoView.isPlaying) {
+                videoView.resume() // 重新播放
             }
         }
     }
@@ -157,5 +181,7 @@ class MainActivityMedia : AppCompatActivity() {
         super.onDestroy()
         mediaPlayer.stop()
         mediaPlayer.release()
+        val videoView = findViewById<VideoView>(R.id.videoView)
+        videoView.suspend() // 释放VideoView所占用的资源
     }
 }
