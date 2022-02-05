@@ -15,23 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLearn">
-        
-        <provider
-            android:authorities="com.example.media.fileProvider"
-            android:name="androidx.core.content.FileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@/xml/file_paths" />
-        </provider>
-        
-        
         <activity
-            android:name="com.example.media.NotificationActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.media.MainActivityMedia"
+            android:name="com.example.service.MainActivityService"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,6 +24,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.media.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@/xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="com.example.media.NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.media.MainActivityMedia"
+            android:exported="true" />
         <activity
             android:name="com.example.content.MainActivityPerson"
             android:exported="true" />
