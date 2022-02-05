@@ -10,5 +10,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/sendNotice"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:text="send notice" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/takePhotoViewBtn"
+        app:layout_constraintTop_toBottomOf="@+id/sendNotice"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="take photo view" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/takePhotoBtn"
+        app:layout_constraintTop_toBottomOf="@+id/takePhotoViewBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="take photo" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fromAlbumBtn"
+        app:layout_constraintTop_toBottomOf="@+id/takePhotoBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="from album" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/fromAlbumBtn"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
