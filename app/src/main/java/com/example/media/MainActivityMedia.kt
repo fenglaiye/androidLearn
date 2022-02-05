@@ -9,6 +9,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.media.ExifInterface
+import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,7 @@ import java.io.File
 class MainActivityMedia : AppCompatActivity() {
     lateinit var imageUri: Uri
     lateinit var outputImage: File
+    private val mediaPlayer = MediaPlayer()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,6 +80,24 @@ class MainActivityMedia : AppCompatActivity() {
         findViewById<Button>(R.id.fromAlbumBtn).setOnClickListener {
             createDocumentLauncher.launch(arrayOf("image/*"))
         }
+        // 初始化音频播放器
+        initMediaPlayer()
+        findViewById<Button>(R.id.play).setOnClickListener {
+            if (!mediaPlayer.isPlaying) {
+                mediaPlayer.start() // 开始播放
+            }
+        }
+        findViewById<Button>(R.id.pause).setOnClickListener {
+            if (mediaPlayer.isPlaying) {
+                mediaPlayer.pause() // 暂停播放
+            }
+        }
+        findViewById<Button>(R.id.stop).setOnClickListener {
+            if (mediaPlayer.isPlaying) {
+                mediaPlayer.reset() // 停止播放
+                initMediaPlayer()
+            }
+        }
     }
 
     // 拍照并将图片保存到给定的Uri地址，返回Boolean代表成败
@@ -125,4 +145,17 @@ class MainActivityMedia : AppCompatActivity() {
         .openFileDescriptor(uri, "r")?.use {
             BitmapFactory.decodeFileDescriptor(it.fileDescriptor)
         }
+
+    private fun initMediaPlayer() {
+        val assetManager = assets
+        val fd = assetManager.openFd("sin.wav")
+        mediaPlayer.setDataSource(fd.fileDescriptor, fd.startOffset, fd.length)
+        mediaPlayer.prepare()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mediaPlayer.stop()
+        mediaPlayer.release()
+    }
 }
