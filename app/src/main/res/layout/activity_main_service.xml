@@ -9,18 +9,42 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/changeTextBtn"
+        android:id="@+id/startServiceBtn"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="change text" />
+        android:text="start service" />
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:text="hello world"
-        android:textSize="20sp"
+        android:id="@+id/stopServiceBtn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/startServiceBtn"
+        android:layout_marginStart="10dp"
+        android:text="stop service" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bindServiceBtn"
+        app:layout_constraintTop_toBottomOf="@+id/startServiceBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/changeTextBtn" />
+        android:text="bind service" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/unbindServiceBtn"
+        app:layout_constraintTop_toBottomOf="@+id/startServiceBtn"
+        app:layout_constraintStart_toEndOf="@+id/bindServiceBtn"
+        android:layout_marginStart="10dp"
+        android:text="unbind service" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/startIntentServiceBtn"
+        app:layout_constraintTop_toBottomOf="@+id/unbindServiceBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="start intent service" />
 </androidx.constraintlayout.widget.ConstraintLayout>
