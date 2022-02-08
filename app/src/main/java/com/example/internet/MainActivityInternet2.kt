@@ -8,7 +8,6 @@ import com.example.androidLearn.Global
 import com.example.androidLearn.databinding.ActivityMainInternetBinding
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import org.xml.sax.InputSource
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserFactory
 import java.io.BufferedReader
@@ -18,12 +17,11 @@ import java.lang.Exception
 import java.lang.StringBuilder
 import java.net.HttpURLConnection
 import java.net.URL
-import javax.xml.parsers.SAXParserFactory
 import kotlin.concurrent.thread
 
 private lateinit var binding: ActivityMainInternetBinding
 
-class MainActivityInternet : AppCompatActivity() {
+class MainActivityInternet2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainInternetBinding.inflate(layoutInflater)
@@ -38,14 +36,13 @@ class MainActivityInternet : AppCompatActivity() {
             try {
                 val client = OkHttpClient()
                 val request = Request.Builder()
-                    .url("http://192.168.3.247/get_data.xml")
+                    .url("http://192.168.50.182/get_data.xml")
                     .build()
                 val response = client.newCall(request).execute()
                 val responseData = response.body?.string()
                 if (responseData != null) {
 //                    showResponse(responseData)
-//                    parseXML1(responseData)
-                    parseXML2(responseData)
+                    parseXML1(responseData)
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -60,15 +57,37 @@ class MainActivityInternet : AppCompatActivity() {
         }
     }
 
-    private fun parseXML2(xmlData: String) {
+    private fun parseXML1(xmlData: String) {
         try {
-            val factory = SAXParserFactory.newInstance()
-            val xmlReader = factory.newSAXParser().xmlReader
-            val handler = ContentHandler()
-            //  将ContentHandler实例设置到reader中
-            xmlReader.contentHandler = handler
-            // 执行解析
-            xmlReader.parse(InputSource(StringReader(xmlData)))
+            val factory = XmlPullParserFactory.newInstance()
+            val xmlPullParser = factory.newPullParser()
+            xmlPullParser.setInput(StringReader(xmlData))
+            var eventType = xmlPullParser.eventType
+            var id = ""
+            var name = ""
+            var version = ""
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                val nodeName = xmlPullParser.name
+                when (eventType) {
+                    // 开始解析某个节点
+                    XmlPullParser.START_TAG -> {
+                        when (nodeName) {
+                            "id" -> id = xmlPullParser.nextText()
+                            "name" -> name = xmlPullParser.nextText()
+                            "version" -> version = xmlPullParser.nextText()
+                        }
+                    }
+                    // 完成解析某个节点
+                    XmlPullParser.END_TAG -> {
+                        if ("app" == nodeName) {
+                            Log.d(Global.TAG, "id $id")
+                            Log.d(Global.TAG, "name is $name")
+                            Log.d(Global.TAG, "version is $version")
+                        }
+                    }
+                }
+                eventType = xmlPullParser.next()
+            }
         } catch (e: Exception) {
             e.printStackTrace()
         }
