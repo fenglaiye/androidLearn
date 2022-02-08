@@ -31,12 +31,12 @@ class MainActivityInternet3 : AppCompatActivity() {
                     .url("http://192.168.3.247/get_data.xml")
                     .build()
                 val response = client.newCall(request).execute()
-                val responseData = response.body?.string()
-                if (responseData != null) {
+//                val responseData = response.body?.string()
+//                if (responseData != null) {
 //                    showResponse(responseData)
 //                    parseXML1(responseData)
-                    parseXML2(responseData)
-                }
+//                    parseXML2(responseData)
+//                }
             } catch (e: Exception) {
                 e.printStackTrace()
             }

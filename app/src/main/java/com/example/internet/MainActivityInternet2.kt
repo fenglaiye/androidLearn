@@ -39,11 +39,11 @@ class MainActivityInternet2 : AppCompatActivity() {
                     .url("http://192.168.50.182/get_data.xml")
                     .build()
                 val response = client.newCall(request).execute()
-                val responseData = response.body?.string()
-                if (responseData != null) {
+//                val responseData = response.body?.string()
+//                if (responseData != null) {
 //                    showResponse(responseData)
-                    parseXML1(responseData)
-                }
+//                    parseXML1(responseData)
+//                }
             } catch (e: Exception) {
                 e.printStackTrace()
             }

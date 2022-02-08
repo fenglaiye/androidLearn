@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 private lateinit var binding: ActivityMainInternetBinding
 
-class MainActivityInternet : AppCompatActivity() {
+class MainActivityInternet5 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainInternetBinding.inflate(layoutInflater)
@@ -24,7 +24,25 @@ class MainActivityInternet : AppCompatActivity() {
     }
 
     private fun sendRequest1() {
+        val retrofit = Retrofit.Builder()
+            .baseUrl("http://192.168.3.247/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        val appService = retrofit.create(AppService::class.java)
+        appService.getAppData().enqueue(object : Callback<List<App>> {
+            override fun onResponse(call: Call<List<App>>, response: Response<List<App>>) {
+                val list = response.body()
+                if (list != null) {
+                    for (app in list) {
+                        Log.d(Global.TAG, "id is ${app.id}")
+                    }
+                }
+            }
 
+            override fun onFailure(call: Call<List<App>>, t: Throwable) {
+                t.printStackTrace()
+            }
+        })
     }
 
     private fun showResponse(response: String) {
