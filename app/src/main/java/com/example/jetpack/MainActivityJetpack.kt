@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.edit
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.androidLearn.databinding.ActivityMainJetpackBinding
 
@@ -23,24 +24,21 @@ class MainActivityJetpack : AppCompatActivity() {
         viewModel = ViewModelProvider(this, MainViewModelFactory(countReserved))
             .get(MainViewModel::class.java)
         binding.plusOneBtn.setOnClickListener {
-            viewModel.counter ++
-            refreshCounter()
+            viewModel.plusOne()
         }
         binding.clearBtn.setOnClickListener {
-            viewModel.counter = 0
-            refreshCounter()
+            viewModel.clear()
         }
-        refreshCounter()
+        viewModel.counter.observe(this, Observer { count ->
+            binding.infoText.text = count.toString()
+        })
+        lifecycle.addObserver(MyObserver(lifecycle))
     }
 
     override fun onPause() {
         super.onPause()
         sp.edit {
-            putInt("count_reserved", viewModel.counter)
+            putInt("count_reserved", viewModel.counter.value ?: 0)
         }
-    }
-
-    private fun refreshCounter() {
-        binding.infoText.text = viewModel.counter.toString()
     }
 }
