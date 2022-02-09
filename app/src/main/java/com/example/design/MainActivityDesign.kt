@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.core.view.GravityCompat
 import com.example.androidLearn.R
 import com.example.androidLearn.databinding.ActivityMainDesignBinding
+import com.google.android.material.snackbar.Snackbar
 
 private lateinit var binding : ActivityMainDesignBinding
 
@@ -25,6 +26,13 @@ class MainActivityDesign : AppCompatActivity() {
         binding.navView.setNavigationItemSelectedListener {
             binding.drawerLayout.closeDrawers()
             true
+        }
+        binding.fab.setOnClickListener {
+            Snackbar.make(it, "Data deleted", Snackbar.LENGTH_SHORT)
+                .setAction("Undo") {
+                    Toast.makeText(this, "Data restored", Toast.LENGTH_SHORT).show()
+                }
+                .show()
         }
     }
 
