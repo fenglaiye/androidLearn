@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.24003623188405798" />
         <entry key="app/src/main/res/layout/activity_main_base.xml" value="0.2418478260869565" />
         <entry key="app/src/main/res/layout/activity_main_content.xml" value="0.1921875" />
+        <entry key="app/src/main/res/layout/activity_main_design.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_main_file.xml" value="0.2418478260869565" />
         <entry key="app/src/main/res/layout/activity_main_internet.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main_media.xml" value="0.24818840579710144" />
@@ -48,6 +49,7 @@
         <entry key="app/src/main/res/layout/u3_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/u4_layout.xml" value="0.375" />
         <entry key="app/src/main/res/menu/main.xml" value="0.45" />
+        <entry key="app/src/main/res/menu/toolbar.xml" value="0.21025641025641026" />
       </map>
     </option>
   </component>
