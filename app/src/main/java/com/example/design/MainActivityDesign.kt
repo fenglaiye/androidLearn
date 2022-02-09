@@ -6,13 +6,30 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.view.GravityCompat
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.androidLearn.Fruit
 import com.example.androidLearn.R
 import com.example.androidLearn.databinding.ActivityMainDesignBinding
 import com.google.android.material.snackbar.Snackbar
 
-private lateinit var binding : ActivityMainDesignBinding
+private lateinit var binding: ActivityMainDesignBinding
 
 class MainActivityDesign : AppCompatActivity() {
+    val fruits = mutableListOf(
+        Fruit("Apple", R.drawable.apple),
+        Fruit("Banana", R.drawable.banana),
+        Fruit("Orange", R.drawable.orange),
+        Fruit("Watermelon", R.drawable.watermelon),
+        Fruit("Pear", R.drawable.pear),
+        Fruit("Grape", R.drawable.grape),
+        Fruit("Pineapple", R.drawable.pineapple),
+        Fruit("Strawberry", R.drawable.strawberry),
+        Fruit("Cherry", R.drawable.cherry),
+        Fruit("Mango", R.drawable.mango)
+    )
+
+    val fruitList = ArrayList<Fruit>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainDesignBinding.inflate(layoutInflater)
@@ -34,6 +51,11 @@ class MainActivityDesign : AppCompatActivity() {
                 }
                 .show()
         }
+        initFruits()
+        val layoutManager = GridLayoutManager(this, 2)
+        val adapter = FruitAdapterCard(this, fruitList)
+        binding.recyclerView.layoutManager = layoutManager
+        binding.recyclerView.adapter = adapter
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -49,5 +71,13 @@ class MainActivityDesign : AppCompatActivity() {
             android.R.id.home -> binding.drawerLayout.openDrawer(GravityCompat.START)
         }
         return true
+    }
+
+    private fun initFruits() {
+        fruitList.clear()
+        repeat(1000) {
+            val index = (0 until fruits.size).random()
+            fruitList.add(fruits[index])
+        }
     }
 }
