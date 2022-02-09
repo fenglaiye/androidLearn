@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.androidLearn.Fruit
 import com.example.androidLearn.R
 import com.example.androidLearn.databinding.ActivityMainDesignBinding
+import com.example.util.showToast
 import com.google.android.material.snackbar.Snackbar
 import kotlin.concurrent.thread
 
@@ -71,7 +72,7 @@ class MainActivityDesign : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.backup -> Toast.makeText(this, "backup", Toast.LENGTH_SHORT).show()
+            R.id.backup -> "backup".showToast(this)
             R.id.delete -> Toast.makeText(this, "delete", Toast.LENGTH_SHORT).show()
             R.id.settings -> Toast.makeText(this, "settings", Toast.LENGTH_SHORT).show()
             android.R.id.home -> binding.drawerLayout.openDrawer(GravityCompat.START)
