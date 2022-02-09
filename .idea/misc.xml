@@ -35,6 +35,7 @@
         <entry key="app/src/main/res/layout/list_view_layout.xml" value="0.21041666666666667" />
         <entry key="app/src/main/res/layout/msg_left_item.xml" value="0.335" />
         <entry key="app/src/main/res/layout/msg_right_item.xml" value="0.1933876811594203" />
+        <entry key="app/src/main/res/layout/nav_header.xml" value="0.1038500506585613" />
         <entry key="app/src/main/res/layout/new_item.xml" value="0.20153985507246377" />
         <entry key="app/src/main/res/layout/news_content_flag.xml" value="0.18568840579710144" />
         <entry key="app/src/main/res/layout/news_item.xml" value="0.18568840579710144" />
@@ -49,6 +50,7 @@
         <entry key="app/src/main/res/layout/u3_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/u4_layout.xml" value="0.375" />
         <entry key="app/src/main/res/menu/main.xml" value="0.45" />
+        <entry key="app/src/main/res/menu/nav_menu.xml" value="0.2101851851851852" />
         <entry key="app/src/main/res/menu/toolbar.xml" value="0.21025641025641026" />
       </map>
     </option>
