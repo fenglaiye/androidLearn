@@ -11,6 +11,7 @@ import com.example.androidLearn.Fruit
 import com.example.androidLearn.R
 import com.example.androidLearn.databinding.ActivityMainDesignBinding
 import com.google.android.material.snackbar.Snackbar
+import kotlin.concurrent.thread
 
 private lateinit var binding: ActivityMainDesignBinding
 
@@ -56,6 +57,11 @@ class MainActivityDesign : AppCompatActivity() {
         val adapter = FruitAdapterCard(this, fruitList)
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter
+        // 下拉刷新
+        binding.swipeRefresh.setColorSchemeResources(R.color.design_default_color_primary)
+        binding.swipeRefresh.setOnRefreshListener {
+            refreshFruits(adapter)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -78,6 +84,17 @@ class MainActivityDesign : AppCompatActivity() {
         repeat(1000) {
             val index = (0 until fruits.size).random()
             fruitList.add(fruits[index])
+        }
+    }
+
+    private fun refreshFruits(adapter: FruitAdapterCard) {
+        thread {
+            Thread.sleep(2000)
+            runOnUiThread {
+                initFruits()
+                adapter.notifyDataSetChanged()
+                binding.swipeRefresh.isRefreshing = false
+            }
         }
     }
 }
