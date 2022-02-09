@@ -19,16 +19,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLearn">
         <activity
+            android:name="com.example.design.FruitActivity"
+            android:theme="@style/FruitActivityTheme"
+            android:exported="false" />
+        <activity
             android:name="com.example.design.MainActivityDesign"
-            android:label="first"
-            android:exported="true">
+            android:exported="true"
+            android:label="first">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.example.internet.MainActivityInternet"
             android:exported="true" />
