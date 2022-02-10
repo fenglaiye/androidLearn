@@ -8,6 +8,8 @@ import android.util.Log
 import androidx.core.content.edit
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.work.OneTimeWorkRequest
+import androidx.work.WorkManager
 import com.example.androidLearn.Global
 import com.example.androidLearn.databinding.ActivityMainJetpackBinding
 import kotlin.concurrent.thread
@@ -63,6 +65,11 @@ class MainActivityJetpack : AppCompatActivity() {
                     Log.d(Global.TAG, user.toString())
                 }
             }
+        }
+        // workManager
+        binding.doWorkBtn.setOnClickListener {
+            val request = OneTimeWorkRequest.Builder(SimpleWorker::class.java).build()
+            WorkManager.getInstance(this).enqueue(request)
         }
     }
 
