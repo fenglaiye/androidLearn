@@ -30,4 +30,50 @@
         app:layout_constraintTop_toBottomOf="@+id/infoText"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@+id/plusOneBtn" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/getUserBtn"
+        android:text="get user"
+        app:layout_constraintTop_toBottomOf="@+id/plusOneBtn"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addDataBtn"
+        android:text="add data"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/getUserBtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateDataBtn"
+        android:text="update data"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/addDataBtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/deleteDataBtn"
+        android:text="delete data"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/updateDataBtn"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/queryDataBtn"
+        android:text="query data"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/deleteDataBtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
